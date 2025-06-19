@@ -1,0 +1,63 @@
+/* Custom animations for Hero section dynamic elements */
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.1; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 0.2; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s infinite ease-in-out;
+}
+
+/* For the carousel in Showcase Work */
+.carousel-track {
+    display: flex;
+    width: 300%; /* For 3 slides, adjust based on number of slides */
+    /* If you want true infinite, you'd duplicate slides and use JS for smooth transition */
+}
+
+.carousel-item {
+    width: calc(100% / 1); /* Each item takes full width */
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .carousel-slide {
+        width: calc(100% / 2); /* Show two items on medium screens */
+    }
+}
+
+
+/* For the customer logo animation */
+.customer-logo {
+    animation: fadeInOut 10s infinite ease-in-out forwards;
+}
+
+/* Adjust animation delay for each logo */
+.customer-logo:nth-child(1) { animation-delay: 0s; }
+.customer-logo:nth-child(2) { animation-delay: 1.5s; }
+.customer-logo:nth-child(3) { animation-delay: 3s; }
+.customer-logo:nth-child(4) { animation-delay: 4.5s; }
+.customer-logo:nth-child(5) { animation-delay: 6s; }
+.customer-logo:nth-child(6) { animation-delay: 7.5s; }
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(0); }
+    40% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* For product item hover */
+.product-item:hover .add-to-bag-btn {
+    display: block;
+}
+
+/* Styles for active filter buttons in Data Analytics */
+.active-filter {
+    background-color: #3B82F6; /* Tailwind blue-500 */
+    color: white;
+    border-color: #3B82F6;
+}
+
+/* Added ripple effect CSS to the inline style block in HTML for simplicity */
